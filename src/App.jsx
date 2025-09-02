@@ -176,7 +176,7 @@ export default function TowerOfHanoi({ initialDisks = 4, colors = DEFAULT_COLORS
               <div style={{ position: 'absolute', left: 0, right: 0, bottom: baseHeight, height: pegHeight }} aria-hidden>
                 {rod.map((size, idx) => {
                   const w = diskWidthFor(size);
-                  const bottom = idx * (diskHeight + diskGap);
+                  const bottom = idx * (diskHeight + diskGap) + 5;
                   const color = colors[(size - 1) % colors.length];
                   return (
                     <div
@@ -207,7 +207,7 @@ export default function TowerOfHanoi({ initialDisks = 4, colors = DEFAULT_COLORS
                 })}
               </div>
 
-              <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', bottom: 0, width: 200, height: baseHeight, background: '#0b0b0b', borderRadius: 8 }} />
+              <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', bottom: 5, width: 200, height: baseHeight, background: '#0b0b0b', borderRadius: 8 }} />
               {rIdx === rods.length - 1 && (
                 <p style={{ position: 'absolute', bottom: -65, left: '50%', transform: 'translateX(-50%)', fontWeight: 'bold', fontSize: '20px', color: '#1976d2' }}>
                   Target
